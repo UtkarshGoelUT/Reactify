@@ -6,7 +6,7 @@ import classes from './Navbar.module.css';
 import {userContext} from '../../../context/userContext';
 
 const NavbarComponent = () => {
-    const {name, uid, amount} = useContext(userContext);
+    const {name} = useContext(userContext);
 
     return (
         <div>
