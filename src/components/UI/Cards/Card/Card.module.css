@@ -1,11 +1,11 @@
 .Card {
-    margin: 30px auto;
-    width: 60%;
-    box-shadow: 2px 2px 4px #30ffe7;
+	margin: 30px auto;
+	width: 60%;
+	box-shadow: 2px 2px 4px #30ffe7;
 }
 
 @media (max-width: 1200px) {
-    .Card {
-        width: 90%;
-    }
+	.Card {
+		width: 90%;
+	}
 }
