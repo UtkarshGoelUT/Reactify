@@ -6,7 +6,13 @@ import classes from "./Navbar.module.css";
 import { userContext } from "../../../context/userContext";
 
 const NavbarComponent = () => {
-	const { name } = useContext(userContext);
+	const { name, setName, setUid, setAmount } = useContext(userContext);
+
+	const startLogOut = () => {
+		setName("");
+		setUid("");
+		setAmount("");
+	};
 
 	return (
 		<div>
@@ -17,9 +23,9 @@ const NavbarComponent = () => {
 				variant="dark"
 				expand="sm"
 			>
-				<Navbar.Brand href="/">
-					Reactify
-				</Navbar.Brand>
+				<Link to="/">
+					<Navbar.Brand href="/">Reactify</Navbar.Brand>
+				</Link>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="mr-auto"></Nav>
@@ -36,8 +42,11 @@ const NavbarComponent = () => {
 								</Nav.Link>
 							</Link>
 						) : (
-							<Nav.Link style={{ marginTop: "0.9px", cursor: "default" }}>
-								{name}
+							<Nav.Link
+								style={{ marginTop: "0.9px", cursor: "default" }}
+								onClick={startLogOut}
+							>
+								Logout
 							</Nav.Link>
 						)}
 					</Nav>
