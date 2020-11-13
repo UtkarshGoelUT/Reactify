@@ -17,39 +17,29 @@ const NavbarComponent = () => {
 				variant="dark"
 				expand="sm"
 			>
-				<Link to="/">
-					
-						Reactify
-				
-				</Link>
+				<Navbar.Brand href="/">
+					Reactify
+				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
-					<Nav >
-						<Link to="/">
-							
-								Home
-							
+					<Nav className="mr-auto"></Nav>
+					<Nav>
+						<Link to="/about">
+							<Nav.Link style={{ marginTop: "0.9px" }} eventKey={2} href="/">
+								About
+							</Nav.Link>
 						</Link>
-	
-					
-						
-							<Link to="/about" class="d-flex justify-contents-end">
-								
-									About
-							
+						{name === "" ? (
+							<Link to="/login">
+								<Nav.Link style={{ marginTop: "0.9px" }} href="/">
+									Login/Signup
+								</Nav.Link>
 							</Link>
-							{name === "" ? (
-								<Link to="/login">
-									
-										Login/Signup
-								
-								</Link>
-							) : (
-									
-										{name}
-									
-								)}
-						
+						) : (
+							<Nav.Link style={{ marginTop: "0.9px", cursor: "default" }}>
+								{name}
+							</Nav.Link>
+						)}
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
