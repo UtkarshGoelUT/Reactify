@@ -1,9 +1,12 @@
-import React,{Component} from 'react';
-class Ngo extends Component{
-    render(){
-        return(
-            <h1>Ngo</h1>
-        );
-    }
+import React from 'react';
+
+const Ngo = (props) => {
+    return (
+        <div>
+            <h1>{props.info.name}</h1>
+            <h3>{props.info.fund}</h3>
+            <h3>{props.info.description}</h3>
+        </div>
+    );
 }
 export default Ngo;
