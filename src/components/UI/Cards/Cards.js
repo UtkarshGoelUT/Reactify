@@ -9,6 +9,7 @@ const cards = (props) => {
 				{props.ngos.map((ngo) => {
 					return (
 						<Card
+							key={ngo.name}
 							name={ngo.name}
 							description={ngo.description}
 							fund={ngo.fund}
