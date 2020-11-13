@@ -1,12 +1,11 @@
-.Navbar  {
-    background-color: #00b7ba;
+.Navbar {
+	background-color: #00b7ba;
 }
 
 .NavbarLeft {
-    margin-left: 10px;
+	margin-left: 10px;
 }
 
 .NavbarRight {
-    margin-right: 10px
+	margin-left: 840px;
 }
-
