@@ -6,7 +6,7 @@ import Home from "./containers/Home/Home";
 import LoginPage from "./components/UI/LoginPage/LoginPage";
 import { UserProvider } from "./context/userContext";
 import { NgoProvider } from "./context/ngoContext";
-import Ngos from './components/UI/Ngos/Ngos';
+import Ngos from "./components/UI/Ngos/Ngos";
 
 class App extends Component {
 	render() {
@@ -23,7 +23,10 @@ class App extends Component {
 								<Route path="/login" exact>
 									<LoginPage />
 								</Route>
-								<Route path='/Ngo/:id' render={(props)=><Ngos {...props}/>}/>
+								<Route
+									path="/Ngo/:id"
+									render={(props) => <Ngos {...props} />}
+								/>
 							</Switch>
 						</Router>
 					</NgoProvider>
