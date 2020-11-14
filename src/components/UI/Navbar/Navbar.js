@@ -1,17 +1,21 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import classes from "./Navbar.module.css";
 import { userContext } from "../../../context/userContext";
+import { firebase } from "../../../firebase/firebase";
 
 const NavbarComponent = () => {
+	const history = useHistory();
 	const { name, setName, setUid, setAmount } = useContext(userContext);
 
 	const startLogOut = () => {
 		setName("");
 		setUid("");
 		setAmount("");
+		firebase.auth().signOut();
+		history.push("/");
 	};
 
 	return (
